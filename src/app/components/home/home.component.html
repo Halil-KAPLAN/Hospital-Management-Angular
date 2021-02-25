@@ -1,0 +1,54 @@
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <div class="card-header text-secondary">
+      <h4>Home</h4>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+
+    <div class="row text-white">
+
+
+      <div class="col rounded mr-2 ml-2" style="background-color: #27C24C; cursor: pointer;" routerLink="patient">
+        <div class="row" style="border-radius: 10px; height:80px;">
+          <div class="col-4 text-center rounded-left" style="background-color: #1E983B;">
+            <img class="" style="margin-top:16px;" src="assets/images/share-white-40.png" />
+          </div>
+          <div class="col">
+            <h2>{{patients.length}}</h2>
+            <span>PATIENT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col rounded mr-2 ml-2" style="background-color: #EC2121; cursor: pointer;" routerLink="doctor">
+        <div class="row" style="border-radius: 10px; height:80px;">
+          <div class="col-4 text-center rounded-left" style="background-color: #F05050;">
+            <img class="" style="margin-top:17px;" src="assets/images/star-white-40.png" />
+          </div>
+          <div class="col">
+            <h2>3</h2>
+            <div>DOCTOR</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col rounded mr-2 ml-2" style="background-color: #2F80E7; cursor: pointer;" routerLink="appointment">
+        <div class="row" style="border-radius: 17px; height:80px;">
+          <div class="col-4 text-center rounded-left" style="background-color: #5D9CEC;">
+            <img class="" style="margin-top:17px;" src="assets/images/star-white-40.png" />
+          </div>
+          <div class="col">
+            <h2>3</h2>
+            <div>APPOINTMENT</div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</main>

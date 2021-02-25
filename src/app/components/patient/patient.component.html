@@ -1,0 +1,152 @@
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+        <div class="card-header text-secondary">
+            <div class="row">
+                <div class="col">
+                    <h4>Patient</h4>
+                </div>
+                <div class="form-inline my-2 my-lg-0">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveEditModal"
+                        (click)="AddPatientButton()">Add
+                        Patient</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="saveEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content form-group" [formGroup]="patientForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Patient</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">First Name</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="First Name" aria-label="Firstname"
+                                    aria-describedby="basic-addon1" formControlName="firstName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">Last Name</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Last Name" aria-label="Lastname"
+                                    aria-describedby="basic-addon2" formControlName="lastName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">Insurance No</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Insurance No"
+                                    aria-label="Insurance" aria-describedby="basic-addon3" formControlName="insurance">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">Phone Number</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Phone Number"
+                                    aria-label="PhoneNumber" aria-describedby="basic-addon4"
+                                    formControlName="phoneNumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">Adress</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <textarea type="text" class="form-control" placeholder="Address" aria-label="Address"
+                                    aria-describedby="basic-addon5" formControlName="address"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn border" data-dismiss="modal"
+                        (click)="ClearPatientForm()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AddUpdatePatient()">Save
+                        changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="panel panel-default border rounded p-3">
+            <nav class="navbar navbar-light justify-content-between">
+
+                <form class="form-inline">
+                    <span>Show</span>
+                    <div class="dropdown mr-3 ml-2">
+                        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            10
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">25</a>
+                            <a class="dropdown-item" href="#">50</a>
+                        </div>
+                    </div>
+                    <span>entries</span>
+                </form>
+
+                <form class="form-inline">
+                    <label for="colFormLabel" class="col col-form-label">Search:</label>
+                    <input class="form-control mr-sm-2" type="search" aria-label="Search">
+                </form>
+            </nav>
+
+            <table class="table table-striped ">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Insurance</th>
+                        <th scope="col">Adress</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pati of patients">
+                        <td>{{pati.firstName}}</td>
+                        <td>{{pati.lastName}}</td>
+                        <td>{{pati.insurance}}</td>
+                        <td>{{pati.address}}</td>
+                        <td>{{pati.phoneNumber}}</td>
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#saveEditModal"
+                                (click)="EditOpenModal(pati)">Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="RemovePatient(pati)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</main>
