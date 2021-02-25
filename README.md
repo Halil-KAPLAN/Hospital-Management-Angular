@@ -8,26 +8,29 @@ A simple form interface application made with Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+NodeJS must be installed for the project to work.
 
-## Code scaffolding
+- Download and install **node** (and **npm**): https://nodejs.org/en/
+- Make sure you have an editor (I used VSCode: https://code.visualstudio.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Install dependencies
 
-## Build
+Open a terminal or command prompt inside the project folder, then install the dependencies.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```Bash
+# Follow this command to add the node_modules folder.
+$ npm install
+```
 
-## Running unit tests
+### Start the project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Open a terminal or command prompt inside the project folder.
 
-## Running end-to-end tests
+```Bash
+# Follow this command to run the project.
+$ npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Then visit http://localhost:4200/
