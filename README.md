@@ -1,4 +1,4 @@
-# HospitalManagementSystem
+# Hospital Management System
 
 ## Description
 
